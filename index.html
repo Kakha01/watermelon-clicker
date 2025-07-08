@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Watermelon Clicker</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DynaPuff&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="preflight.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="app">
+    <div class="screen">
+      <div class="main-screen">
+        <div class="main-screen__header">
+          <h1 class="main-screen__title">Kakha's Farm</h1>
+          <button class="main-screen__burger" id="burger-open">
+            <img src="./assets/burger.svg" alt="Open burger menu" />
+          </button>
+        </div>
+        <div class="stats">
+          <p class="stats__count">
+            <span id="watermelon-count" class="stats__count-value">0</span>
+            watermelons
+          </p>
+          <p class="stats__rate">
+            per second:
+            <span id="watermelon-cps" class="stats__rate-value">0</span>
+          </p>
+        </div>
+        <button id="watermelon-button" class="watermelon-button">
+          <img
+            id="watermelon-button-img"
+            class="watermelon-button__image"
+            src="./assets/watermelon.svg"
+            alt="Watermelon"
+          />
+        </button>
+        <div class="main-screen__halo-wrapper">
+          <img src="./assets/halo.png" class="watermelon-button__halo" />
+        </div>
+      </div>
+      <div class="store-screen" id="store-screen">
+        <div class="store-screen__header">
+          <h2 class="store-screen__title">Store</h2>
+          <button class="store-screen__close" id="burger-close">
+            <img src="./assets/close.svg" alt="Close burger menu" />
+          </button>
+        </div>
+        <div class="store-screen__upgrades">
+          <!-- Tapper upgrade -->
+          <button id="tapper-upgrade" class="upgrade-card" disabled="true">
+            <img
+              class="upgrade-card__image"
+              src="./assets/cursor.png"
+              width="88"
+              height="88"
+              alt="Cursor"
+            />
+            <div class="upgrade-card__details">
+              <p class="upgrade-card__name">Tapper</p>
+              <div class="upgrade-card__cost">
+                <img
+                  class="upgrade-card__cost-icon"
+                  src="./assets/sliced-watermelon.png"
+                  width="24"
+                  height="24"
+                  alt="Sliced watermelon"
+                />
+                <span class="upgrade-card__cost-value" id="tapper-cost"
+                  >15</span
+                >
+              </div>
+            </div>
+            <p class="upgrade-card__quantity" id="tapper-quantity">0</p>
+          </button>
+
+          <!-- Juicer upgrade -->
+          <button id="juicer-upgrade" class="upgrade-card" disabled="true">
+            <img
+              class="upgrade-card__image"
+              src="./assets/juicer.png"
+              width="88"
+              height="88"
+              alt="Juicer"
+            />
+            <div class="upgrade-card__details">
+              <p class="upgrade-card__name">Juicer</p>
+              <div class="upgrade-card__cost">
+                <img
+                  class="upgrade-card__cost-icon"
+                  src="./assets/sliced-watermelon.png"
+                  width="24"
+                  height="24"
+                  alt="Sliced watermelon"
+                />
+                <span class="upgrade-card__cost-value" id="juicer-cost"
+                  >100</span
+                >
+              </div>
+            </div>
+            <p class="upgrade-card__quantity" id="juicer-quantity">0</p>
+          </button>
+
+          <!-- Fruit stand upgrade -->
+          <button id="fruit-stand-upgrade" class="upgrade-card" disabled="true">
+            <img
+              class="upgrade-card__image"
+              src="./assets/fruit-stand.png"
+              width="88"
+              height="88"
+              alt="Fruit Stand"
+            />
+            <div class="upgrade-card__details">
+              <p class="upgrade-card__name">Fruit Stand</p>
+              <div class="upgrade-card__cost">
+                <img
+                  class="upgrade-card__cost-icon"
+                  src="./assets/sliced-watermelon.png"
+                  width="24"
+                  height="24"
+                  alt="Sliced watermelon"
+                />
+                <span class="upgrade-card__cost-value" id="fruit-stand-cost"
+                  >500</span
+                >
+              </div>
+            </div>
+            <p class="upgrade-card__quantity" id="fruit-stand-quantity">0</p>
+          </button>
+
+          <!-- Farm upgrade -->
+          <button id="farm-upgrade" class="upgrade-card" disabled="true">
+            <img
+              class="upgrade-card__image"
+              src="./assets/farm.png"
+              width="88"
+              height="88"
+              alt="Farm"
+            />
+            <div class="upgrade-card__details">
+              <p class="upgrade-card__name">Farm</p>
+              <div class="upgrade-card__cost">
+                <img
+                  class="upgrade-card__cost-icon"
+                  src="./assets/sliced-watermelon.png"
+                  width="24"
+                  height="24"
+                  alt="Sliced watermelon"
+                />
+                <span class="upgrade-card__cost-value" id="farm-cost"
+                  >3000</span
+                >
+              </div>
+            </div>
+            <p class="upgrade-card__quantity" id="farm-quantity">0</p>
+          </button>
+
+          <!-- Tractor upgrade -->
+          <button id="tractor-upgrade" class="upgrade-card" disabled="true">
+            <img
+              class="upgrade-card__image"
+              src="./assets/tractor.png"
+              width="88"
+              height="88"
+              alt="Tractor"
+            />
+            <div class="upgrade-card__details">
+              <p class="upgrade-card__name">Tractor</p>
+              <div class="upgrade-card__cost">
+                <img
+                  class="upgrade-card__cost-icon"
+                  src="./assets/sliced-watermelon.png"
+                  width="24"
+                  height="24"
+                  alt="Sliced watermelon"
+                />
+                <span class="upgrade-card__cost-value" id="tractor-cost"
+                  >10,000</span
+                >
+              </div>
+            </div>
+            <p class="upgrade-card__quantity" id="tractor-quantity">0</p>
+          </button>
+
+          <!-- Greenhouse upgrade -->
+          <button id="greenhouse-upgrade" class="upgrade-card" disabled="true">
+            <img
+              class="upgrade-card__image"
+              src="./assets/greenhouse.png"
+              width="88"
+              height="88"
+              alt="Greenhouse"
+            />
+            <div class="upgrade-card__details">
+              <p class="upgrade-card__name">Greenhouse</p>
+              <div class="upgrade-card__cost">
+                <img
+                  class="upgrade-card__cost-icon"
+                  src="./assets/sliced-watermelon.png"
+                  width="24"
+                  height="24"
+                  alt="Sliced watermelon"
+                />
+                <span class="upgrade-card__cost-value" id="greenhouse-cost"
+                  >40,000</span
+                >
+              </div>
+            </div>
+            <p class="upgrade-card__quantity" id="greenhouse-quantity">0</p>
+          </button>
+        </div>
+      </div>
+    </div>
+    <script src="./main.js"></script>
+  </body>
+</html>
