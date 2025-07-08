@@ -284,3 +284,11 @@ function saveGame() {
 setInterval(() => {
   localStorage.setItem("save", JSON.stringify(gameState));
 }, 1000 * 3);
+
+// small little cheatcode to increase watermelons
+document.addEventListener("keydown", (ev) => {
+  if (ev.altKey && ev.ctrlKey && ev.key === "i") {
+    gameState.watermelons += 10_000;
+    updateWatermelonCountUi();
+  }
+});
