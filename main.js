@@ -170,12 +170,12 @@ function toKebabCase(str) {
 function handleWatermelonClickByInterval() {
   gameState.watermelons += gameState.totalCPS / tickRate;
   updateWatermelonCountUi();
-  updateUpgradeButtons();
 }
 
 function intitializeAutoclickerInterval() {
   if (interval === undefined) {
     interval = setInterval(handleWatermelonClickByInterval, 1000 / tickRate);
+    setInterval(updateUpgradeButtons, 1000);
   }
 }
 
