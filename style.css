@@ -62,7 +62,7 @@ body {
 .stats {
   display: flex;
   width: 100%;
-  height: 6.4375rem;
+  min-height: 6.4375rem;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -128,6 +128,8 @@ body {
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
+  overflow-y: scroll;
+  scroll-margin-block: 16px;
 }
 
 .upgrade-card {
@@ -309,5 +311,21 @@ body {
 
   .main-screen__halo-wrapper {
     left: 50%;
+  }
+
+  .stats__count {
+    padding-inline: 1rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .watermelon-button {
+    top: 60%;
+    width: 18.125rem;
+    height: 15.1875rem;
+  }
+
+  .main-screen__halo-wrapper {
+    top: 60%;
   }
 }
